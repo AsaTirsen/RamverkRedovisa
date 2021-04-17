@@ -18,11 +18,10 @@ return [
             "htmlClass" => null,
             "lang" => "sv",
             "stylesheets" => [
-                "css/dbwebb-se_v2.min.css",
+                "css/dbwebb-se.min.css",
             ],
             "javascripts" => [
                 "js/responsive-menu.js",
-                'https://unpkg.com/leaflet@1.3.3/dist/leaflet.js'
             ],
         ],
     ],
@@ -34,7 +33,7 @@ return [
             "template" => "anax/v2/header/site_logo",
             "data" => [
                 "class" => "large",
-                "siteLogo"      => "img/theme/blueberry.jpeg",
+                "siteLogo"      => "image/theme/leaf_256x256.png",
                 "siteLogoAlt"   => "Löv",
             ],
         ],
@@ -44,7 +43,7 @@ return [
             "data" => [
                 "homeLink"      => "",
                 "siteLogoText"  => "ramverk1",
-                "siteLogoTextIcon" => "img/theme/leaf_40x40.png",
+                "siteLogoTextIcon" => "image/theme/leaf_40x40.png",
                 "siteLogoTextIconAlt" => "Löv-bild",
             ],
         ],
