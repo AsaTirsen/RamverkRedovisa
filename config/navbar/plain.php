@@ -53,5 +53,15 @@ return [
             "url" => "geo_ip_view",
             "title" => "Kontrollera en IP-adress",
         ],
+        [
+            "text" => "Väder",
+            "url" => "weather",
+            "title" => "Få väderprognos",
+        ],
+        [
+            "text" => "VäderAPI",
+            "url" => "weather_api",
+            "title" => "Få väderprognos",
+        ],
     ],
 ];

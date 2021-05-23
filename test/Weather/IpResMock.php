@@ -1,5 +1,5 @@
 <?php
-namespace Asti\Mock;
+namespace Asti\Weather;
 
 use Anax\DI\DIFactoryConfig;
 use Anax\Request\Request;

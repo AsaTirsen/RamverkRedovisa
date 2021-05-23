@@ -5,6 +5,13 @@
  * standard parts of the page, such as header, navbar, footer, stylesheets,
  * javascripts and more.
  */
+//
+//return [
+//    "layout" => [
+//        "region" => "layout",
+//        "template" => "anax/v2/layout/default",
+//    ],
+//];
 return [
     // This layout view is the base for rendering the page, it decides on where
     // all the other views are rendered.
