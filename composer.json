@@ -10,16 +10,10 @@
             "Asti\\": "src/"
         }
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/AsaTirsen/weather"
-        }
-    ],
     "require": {
         "anax/anax-ramverk1-me": "^1.0.0",
         "anax/anax-cli": "^1.2",
-        "asti/weather": "^1.0.8"
+        "asti/weather": "^1.2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7"
