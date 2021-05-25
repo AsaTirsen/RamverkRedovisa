@@ -54,7 +54,7 @@ class DeleteForm extends FormModel
 
         $books = ["-1" => "Select an item..."];
         foreach ($book->findAll() as $obj) {
-            $books[$obj->id] = "{$obj->column1} ({$obj->id})";
+            $books[$obj->id] = "{$obj->booktitle} ({$obj->id})";
         }
 
         return $books;
@@ -86,7 +86,7 @@ class DeleteForm extends FormModel
      */
     public function callbackSuccess()
     {
-        $this->di->get("response")->redirect("book")->send();
+        $this->di->get("response")->redirect("book?books")->send();
     }
 
 

@@ -18,9 +18,13 @@ $urlToView = url("book");
 
 
 ?><h1>Update an item</h1>
+<div>
+    <p>To update a link to an image, just add the image name:</p>
+    <p>Ex: RobertaKarlson.jpg</p>
+</div>
 
 <?= $form ?>
 
 <p>
-    <a href="<?= $urlToView ?>">View all</a>
+    <a href="<?= $urlToView . "?books" ?>">View all</a>
 </p>

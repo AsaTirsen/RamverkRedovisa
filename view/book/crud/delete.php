@@ -19,5 +19,5 @@ $urlToView = url("book");
 <?= $form ?>
 
 <p>
-    <a href="<?= $urlToView ?>">View all</a>
+    <a href="<?= $urlToView . "?books"?>">View all</a>
 </p>

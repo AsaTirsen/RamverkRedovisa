@@ -37,16 +37,21 @@ endif;
 <table>
     <tr>
         <th>Id</th>
-        <th>Column1</th>
-        <th>Column2</th>
+        <th>Författare</th>
+        <th>Titel</th>
+        <th>Bild</th>
+
     </tr>
     <?php foreach ($items as $item) : ?>
     <tr>
         <td>
             <a href="<?= url("book/update/{$item->id}"); ?>"><?= $item->id ?></a>
         </td>
-        <td><?= $item->column1 ?></td>
-        <td><?= $item->column2 ?></td>
+        <td><?= $item->booktitle ?></td>
+        <td><?= $item->author ?></td>
+        <td>
+            <a href="<?= url("img/" . $item->imagelink);?>"><?= $item->imagelink ?></a>
+        </td>
     </tr>
     <?php endforeach; ?>
 </table>

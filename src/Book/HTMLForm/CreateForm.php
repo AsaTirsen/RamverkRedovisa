@@ -60,9 +60,9 @@ class CreateForm extends FormModel
     {
         $book = new Book();
         $book->setDb($this->di->get("dbqb"));
-        $book->column1  = $this->form->value("booktitle");
-        $book->column2 = $this->form->value("author");
-        $book->column3 = $this->form->value("imagelink");
+        $book->booktitle = $this->form->value("booktitle");
+        $book->author = $this->form->value("author");
+        $book->imagelink = $this->form->value("imagelink");
         $book->save();
         return true;
     }
@@ -76,7 +76,7 @@ class CreateForm extends FormModel
      */
     public function callbackSuccess()
     {
-        $this->di->get("response")->redirect("book")->send();
+        $this->di->get("response")->redirect("book?books")->send();
     }
 
 
