@@ -37,9 +37,9 @@ endif;
 <table>
     <tr>
         <th>Id</th>
-        <th>Författare</th>
         <th>Titel</th>
-        <th>Bild</th>
+        <th>Författare</th>
+        <th>Bildlänk</th>
 
     </tr>
     <?php foreach ($items as $item) : ?>
