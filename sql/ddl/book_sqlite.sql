@@ -1,5 +1,5 @@
 --
--- Creating a sample table.
+-- Creating a very small Book table.
 --
 
 
@@ -10,7 +10,6 @@
 DROP TABLE IF EXISTS Book;
 CREATE TABLE Book (
     "id" INTEGER PRIMARY KEY NOT NULL,
-    "booktitle" TEXT NOT NULL,
-    "author" TEXT NOT NULL,
-    "imagelink" TEXT NOT NULL
+    "title" TEXT NOT NULL,
+    "author" TEXT NOT NULL
 );

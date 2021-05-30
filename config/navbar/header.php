@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Supply the basis for the navbar as an array.
@@ -27,31 +28,6 @@ return [
                     ],
                     [
                         "text" => "Kmom02",
-                        "url" => "redovisning/kmom02",
-                        "title" => "Redovisning för kmom02.",
-                    ],
-                    [
-                        "text" => "Kmom03",
-                        "url" => "redovisning/kmom02",
-                        "title" => "Redovisning för kmom02.",
-                    ],
-                    [
-                        "text" => "Kmom04",
-                        "url" => "redovisning/kmom02",
-                        "title" => "Redovisning för kmom02.",
-                    ],
-                    [
-                        "text" => "Kmom05",
-                        "url" => "redovisning/kmom02",
-                        "title" => "Redovisning för kmom02.",
-                    ],
-                    [
-                        "text" => "Kmom06",
-                        "url" => "redovisning/kmom02",
-                        "title" => "Redovisning för kmom02.",
-                    ],
-                    [
-                        "text" => "Kmom10",
                         "url" => "redovisning/kmom02",
                         "title" => "Redovisning för kmom02.",
                     ],
@@ -92,7 +68,8 @@ return [
             "text" => "GEO-IP-check",
             "url" => "geo_ip_view",
             "title" => "Kontrollera en IP-adress",
-        ],[
+        ],
+        [
             "text" => "Väder",
             "url" => "weather",
             "title" => "Få väderprognos",
@@ -100,12 +77,33 @@ return [
         [
             "text" => "VäderAPI",
             "url" => "weather_api",
-            "title" => "Väder API",
+            "title" => "Få väderprognos",
+        ],
+
+        [
+            "text" => "Forum",
+            "url" => "forum",
+            "title" => "Första sidan, börja här.",
         ],
         [
-            "text" => "Bokdatabas",
-            "url" => "book",
-            "title" => "böcker",
+            "text" => "Logga in",
+            "url" => "user/login",
+            "title" => "Logga in.",
+        ],
+        [
+            "text" => "Frågor",
+            "url" => "question",
+            "title" => "Frågor",
+        ],
+        [
+            "text" => "Taggar",
+            "url" => "tag",
+            "title" => "Taggar",
+        ],
+        [
+            "text" => "Om",
+            "url" => "om",
+            "title" => "Om denna webbplats.",
         ],
     ],
 ];

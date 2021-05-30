@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Configuration file for page which can create and put together web pages
@@ -25,7 +26,7 @@ return [
             "htmlClass" => null,
             "lang" => "sv",
             "stylesheets" => [
-                "css/dbwebb-se-v2.min.css",
+                "css/dbwebb-se.min.css",
             ],
             "javascripts" => [
                 "js/responsive-menu.js",
