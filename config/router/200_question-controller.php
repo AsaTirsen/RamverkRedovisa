@@ -7,7 +7,7 @@ return [
     "routes" => [
         [
             "info" => "Question controller.",
-            "mount" => "forum/question",
+            "mount" => "question",
             "handler" => "\Forum\Question\QuestionController",
         ],
     ]
