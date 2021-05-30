@@ -25,7 +25,7 @@ return [
             "htmlClass" => null,
             "lang" => "sv",
             "stylesheets" => [
-                "css/dbwebb-se.min.css",
+                "css/dbwebb-se-v2.min.css",
             ],
             "javascripts" => [
                 "js/responsive-menu.js",

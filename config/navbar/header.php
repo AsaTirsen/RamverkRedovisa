@@ -30,6 +30,31 @@ return [
                         "url" => "redovisning/kmom02",
                         "title" => "Redovisning för kmom02.",
                     ],
+                    [
+                        "text" => "Kmom03",
+                        "url" => "redovisning/kmom02",
+                        "title" => "Redovisning för kmom02.",
+                    ],
+                    [
+                        "text" => "Kmom04",
+                        "url" => "redovisning/kmom02",
+                        "title" => "Redovisning för kmom02.",
+                    ],
+                    [
+                        "text" => "Kmom05",
+                        "url" => "redovisning/kmom02",
+                        "title" => "Redovisning för kmom02.",
+                    ],
+                    [
+                        "text" => "Kmom06",
+                        "url" => "redovisning/kmom02",
+                        "title" => "Redovisning för kmom02.",
+                    ],
+                    [
+                        "text" => "Kmom10",
+                        "url" => "redovisning/kmom02",
+                        "title" => "Redovisning för kmom02.",
+                    ],
                 ],
             ],
         ],
