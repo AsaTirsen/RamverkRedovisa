@@ -16,7 +16,7 @@
         "asti/weather": "^1.2.0",
         "anax/htmlform": "^2.0",
         "anax/database-active-record": "^2.0",
-        "asatirsen/forum": "^1.0.2"
+        "asatirsen/forum": "^1.0.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^7"

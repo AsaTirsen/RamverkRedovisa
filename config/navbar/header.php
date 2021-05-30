@@ -102,7 +102,7 @@ return [
         ],
         [
             "text" => "Om",
-            "url" => "om",
+            "url" => "about",
             "title" => "Om denna webbplats.",
         ],
     ],

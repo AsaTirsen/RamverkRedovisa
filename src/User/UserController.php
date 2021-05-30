@@ -1,11 +1,14 @@
 <?php
 
-namespace Asti\User;
+namespace Forum\User;
 
 use Anax\Commons\ContainerInjectableInterface;
 use Anax\Commons\ContainerInjectableTrait;
-use Asti\User\HTMLForm\UserLoginForm;
-use Asti\User\HTMLForm\CreateUserForm;
+use Forum\Answer\Answer;
+use Forum\Comment\Comment;
+use Forum\Question\Question;
+use Forum\User\HTMLForm\UserLoginForm;
+use Forum\User\HTMLForm\CreateUserForm;
 
 // use Anax\Route\Exception\ForbiddenException;
 // use Anax\Route\Exception\NotFoundException;
@@ -53,10 +56,9 @@ class UserController implements ContainerInjectableInterface
     public function indexActionGet() : object
     {
         $page = $this->di->get("page");
-
-        $page->add("anax/v2/article/default", [
-            "content" => "An index page",
-        ]);
+        $user = new User();
+        $user->setDb($this->di->get("dbqb"));
+        $page->add("user/login");
 
         return $page->render([
             "title" => "A index page",
@@ -79,17 +81,13 @@ class UserController implements ContainerInjectableInterface
         $page = $this->di->get("page");
         $form = new UserLoginForm($this->di);
         $form->check();
-
-        $page->add("anax/v2/article/default", [
-            "content" => $form->getHTML(),
-        ]);
-
-        return $page->render([
+        $data = [
+            "form" => $form->getHTML(),
             "title" => "A login page",
-        ]);
+            ];
+        $page->add("user/login", $data);
+        return $page->render($data);
     }
-
-
 
     /**
      * Description.
@@ -104,14 +102,43 @@ class UserController implements ContainerInjectableInterface
     {
         $page = $this->di->get("page");
         $form = new CreateUserForm($this->di);
+        //check gravatar
+        //curl gravatar API
         $form->check();
 
-        $page->add("anax/v2/article/default", [
-            "content" => $form->getHTML(),
-        ]);
+        $data = [
+            "form" => $form->getHTML(),
+            "title" => "Create user"
+        ];
 
-        return $page->render([
-            "title" => "A create user page",
-        ]);
+        $page->add("user/create", $data);
+        return $page->render($data);
+    }
+
+    public function viewAction($userId): object
+    {
+        $page = $this->di->get("page");
+        $user = new User();
+        $question = new Question();
+        $answer = new Answer;
+        $comment = new Comment;
+        $user->setDb($this->di->get("dbqb"));
+        $answer->setDb($this->di->get("dbqb"));
+        $comment->setDb($this->di->get("dbqb"));
+        $question->setDb($this->di->get("dbqb"));
+        $user->findById($userId);
+        $questions = $question->findAllWhere("user_id = ?", $userId);
+        $comments = $comment->findAllWhere("user_id = ?", $userId);
+        $answers = $answer->findAllWhere("user_id = ?", $userId);
+        $data = [
+            "title" => $user->acronym,
+            "user" => $user,
+            "questions" => $questions,
+            "comments" => $comments,
+            "answers" => $answers,
+        ];
+
+        $page->add("user/view", $data);
+        return $page->render($data);
     }
 }

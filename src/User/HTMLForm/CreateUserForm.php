@@ -1,7 +1,8 @@
 <?php
 
-namespace Asti\User\HTMLForm;
-use Asti\User\User;
+namespace Forum\User\HTMLForm;
+
+use Forum\User\User;
 use Anax\HTMLForm\FormModel;
 use Psr\Container\ContainerInterface;
 
@@ -21,7 +22,7 @@ class CreateUserForm extends FormModel
         $this->form->create(
             [
                 "id" => __CLASS__,
-                "legend" => "Create user",
+                "legend" => "Skapa användare",
             ],
             [
                 "acronym" => [
@@ -30,7 +31,25 @@ class CreateUserForm extends FormModel
 
                 "password" => [
                     "type"        => "password",
+                    "description" => "Välj ett password",
+                    "placeholder" => "Your password",
                 ],
+
+                "hidden" => [
+                    "type"        => "hidden",
+                    "value"       => "secret value",
+                ],
+//
+//                "select" => [
+//                    "type"        => "select",
+//                    "label"       => "Select your rating:",
+//                    "description" => "Here you can place a description.",
+//                    "options"     => [
+//                        "+1" => 1,
+//                        "-1" => -1,
+//                    ],
+//                    "value"    => "potato",
+//                ],
 
                 "password-again" => [
                     "type"        => "password",
@@ -39,9 +58,15 @@ class CreateUserForm extends FormModel
                     ],
                 ],
 
+                "email" => [
+                    "type"        => "email",
+                    "description" => "Skriv in din email",
+                    "placeholder" => "Your email",
+                ],
+
                 "submit" => [
                     "type" => "submit",
-                    "value" => "Create user",
+                    "value" => "Submit",
                     "callback" => [$this, "callbackSubmit"]
                 ],
             ]
@@ -62,6 +87,7 @@ class CreateUserForm extends FormModel
         $acronym       = $this->form->value("acronym");
         $password      = $this->form->value("password");
         $passwordAgain = $this->form->value("password-again");
+        $email         = $this->form->value("email");
 
         // Check password matches
         if ($password !== $passwordAgain ) {
@@ -69,12 +95,21 @@ class CreateUserForm extends FormModel
             $this->form->addOutput("Password did not match.");
             return false;
         }
+
         // Save to database
+        // $db = $this->di->get("dbqb");
+        // $password = password_hash($password, PASSWORD_DEFAULT);
+        // $db->connect()
+        //    ->insert("User", ["acronym", "password"])
+        //    ->execute([$acronym])
+        //    ->fetch();
         $user = new User();
         $user->setDb($this->di->get("dbqb"));
         $user->acronym = $acronym;
+        $user->email = $email;
         $user->setPassword($password);
         $user->save();
+
         $this->form->addOutput("User was created.");
         return true;
     }

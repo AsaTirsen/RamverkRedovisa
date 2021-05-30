@@ -1,12 +1,12 @@
 <?php
+namespace Forum\User;
 
-namespace Asti\User;
-
+use Forum\Gravatar\CurlService;
 use Anax\DatabaseActiveRecord\ActiveRecordModel;
 
 /**
- * A database driven model.
- */
+* A database driven model.
+*/
 class User extends ActiveRecordModel
 {
     /**
@@ -22,6 +22,7 @@ class User extends ActiveRecordModel
     public $id;
     public $acronym;
     public $password;
+    public $email;
     public $created;
     public $updated;
     public $deleted;
@@ -52,5 +53,11 @@ class User extends ActiveRecordModel
     {
         $this->find("acronym", $acronym);
         return password_verify($password, $this->password);
+    }
+
+    public function getGravatar()
+    {
+        $size = 40;
+        return "https://www.gravatar.com/avatar/" . md5(strtolower(trim($this->email))) . "?d=identicon" . "&s=" . $size;
     }
 }
